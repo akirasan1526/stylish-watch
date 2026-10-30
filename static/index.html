@@ -1,4 +1,85 @@
 stylish-watch/
   README.md
   static/
-    index.html
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>STYLIST WATCH</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 20px;
+  background: #101010;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+header {
+  text-align: center;
+  padding: 25px 0;
+  border-bottom: 1px solid #755b2c;
+}
+h1 { color: #d6b36a; letter-spacing: 3px; }
+.tagline { color: #b9a77e; font-size: 12px; }
+.card {
+  background: #202020;
+  border: 1px solid #70572d;
+  border-radius: 15px;
+  padding: 18px;
+  margin: 15px 0;
+}
+.brand { color: #d6b36a; }
+button {
+  background: #d6b36a;
+  color: #111;
+  border: 0;
+  padding: 13px;
+  width: 100%;
+  border-radius: 8px;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>STYLIST WATCH</h1>
+<p class="tagline">LUXURY WATCH COLLECTION</p>
+</header>
+
+<div class="card">
+<h2 class="brand">ZINVO</h2>
+<p>Discover our ZINVO collection.</p>
+<button onclick="add('ZINVO')">ADD TO CART</button>
+</div>
+
+<div class="card">
+<h2 class="brand">D1 MILANO</h2>
+<p>Discover our D1 Milano collection.</p>
+<button onclick="add('D1 MILANO')">ADD TO CART</button>
+</div>
+
+<div class="card">
+<h2>Shopping Cart</h2>
+<p id="cart">Cart: 0</p>
+<button onclick="checkout()">PLACE ORDER</button>
+</div>
+
+<script>
+let items = [];
+
+function add(brand) {
+  items.push(brand);
+  document.getElementById('cart').innerText =
+    'Cart: ' + items.length;
+}
+
+function checkout() {
+  alert('Please contact STYLIST WATCH to confirm your order.');
+}
+</script>
+
+</body>
+</html>
